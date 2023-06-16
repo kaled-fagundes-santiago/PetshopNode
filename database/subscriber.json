@@ -1,0 +1,19 @@
+[
+  {
+    "codigo": 1,
+    "nome": "João",
+    "sobrenome": "Silva",
+    "dataNascimento": "1990-05-15",
+    "telefone": "123456789",
+    "endereco": "Rua Principal, 123",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "status": "Ativo",
+    "imagemPerfil": {
+      
+      "data": "<aaaaaaaaaa>",
+      "contentType": "image/jpeg"
+    }
+  }
+  
+  ]
