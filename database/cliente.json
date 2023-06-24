@@ -1,19 +1,19 @@
 [
   {
     "codigo": 1,
-    "nome": "João",
-    "sobrenome": "Silva",
+    "nome": "adm",
     "dataNascimento": "1990-05-15",
     "telefone": "123456789",
     "endereco": "Rua Principal, 123",
     "cidade": "São Paulo",
-    "estado": "SP",
-    "status": "Ativo",
+    "nomeCartao": "João Silva",
+    "numeroCartao": "1234567890123456",
+    "cvv": "123",
+    "email": "adm@gmail.com",
+    "senha": "123",
     "imagemPerfil": {
-      
       "data": "<aaaaaaaaaa>",
       "contentType": "image/jpeg"
     }
   }
-  
-  ]
+]

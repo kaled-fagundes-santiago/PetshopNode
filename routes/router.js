@@ -6,6 +6,8 @@ const orderController = require('../controllers/orderController');
 const productController = require('../controllers/productController');
 const Client = require('../models/clientModel');
 const multer = require('multer');
+const jwt = require('jsonwebtoken');
+const config = require('../config.cjs');
 
 const upload = multer();
 const middleware = require('../middlleware');
@@ -62,16 +64,23 @@ router.get('/pedido', middleware, orderController.getAll);
 
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
-  
+    console.log(email);
+    console.log(password);
+
     try {
       // Verificar se o cliente existe com o email fornecido
       const client = await Client.findOne({ email });
+      console.log(client);
+
       if (!client) {
+        console.log("erro");
         return res.status(401).json({ error: 'Cliente não encontrado' });
       }
   
       // Verificar se a senha está correta
-      if (password !== client.password) {
+      if (password !== client.senha) {
+        console.log("erro senha ");
+        console.log(password + " " + client.senha );
         return res.status(401).json({ error: 'Senha incorreta' });
       }
   
