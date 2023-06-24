@@ -11,6 +11,13 @@ const ClientController = {
       }
 
       const newClient = new ClientModel({ name, email, phone });
+      const image = req.file;
+
+      newClient.imagemPerfil = {
+          data: image.buffer,
+          contentType: image.mimetype
+      };
+
       const createdClient = await newClient.save();
 
       res.status(201).json(createdClient);
@@ -33,6 +40,13 @@ const ClientController = {
       existingClient.name = name;
       existingClient.email = email;
       existingClient.phone = phone;
+      const image = req.file;
+
+      newClient.imagemPerfil = {
+          data: image.buffer,
+          contentType: image.mimetype
+      };
+
 
       const updatedClient = await existingClient.save();
 

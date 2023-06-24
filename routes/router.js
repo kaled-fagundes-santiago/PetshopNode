@@ -6,11 +6,11 @@ const orderController = require('../controllers/orderController');
 const productController = require('../controllers/productController');
 const Client = require('../models/clientModel');
 
-
+const upload = multer();
 const middleware = require('../middlleware');
 
 // Cadastrar um novo cliente
-router.post('/cliente', middleware, clientController.create);
+router.post('/cliente', middleware, upload.single('imagemPerfil'), clientController.create);
 
 // Editar um cliente existente
 router.put('/cliente/:id', middleware, clientController.update);
