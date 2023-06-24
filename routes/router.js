@@ -5,6 +5,7 @@ const categoryController = require('../controllers/categoryController');
 const orderController = require('../controllers/orderController');
 const productController = require('../controllers/productController');
 const Client = require('../models/clientModel');
+const multer = require('multer');
 
 const upload = multer();
 const middleware = require('../middlleware');
