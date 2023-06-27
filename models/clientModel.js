@@ -10,19 +10,11 @@ const clientSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  dataNascimento: {
-    type: Date,
-    required: true
-  },
   telefone: {
     type: String,
     required: true
   },
   endereco: {
-    type: String,
-    required: true
-  },
-  cidade: {
     type: String,
     required: true
   },
