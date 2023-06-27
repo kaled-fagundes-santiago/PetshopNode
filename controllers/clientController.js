@@ -3,14 +3,13 @@ const ClientModel = require('../models/clientModel');
 const ClientController = {
   create: async (req, res) => {
     try {
-      const { name, email, phone } = req.body;
-
-      const existingClient = await ClientModel.findOne({ email });
+      const cliente = JSON.parse(req.body.teste);
+      const existingClient = await ClientModel.findOne({  email: cliente.email});
       if (existingClient) {
         return res.status(400).json({ error: 'Client already registered' });
       }
 
-      const newClient = new ClientModel({ name, email, phone });
+      const newClient = new ClientModel(cliente);
       const image = req.file;
 
       newClient.imagemPerfil = {
@@ -29,17 +28,17 @@ const ClientController = {
 
   update: async (req, res) => {
     try {
-      const { id } = req.params;
-      const { name, email, phone } = req.body;
+      const cliente = JSON.parse(req.body.teste);
 
-      const existingClient = await ClientModel.findById(id);
+
+      const existingClient = await ClientModel.findById( cliente.id);
       if (!existingClient) {
         return res.status(404).json({ error: 'Client not found' });
       }
 
-      existingClient.name = name;
-      existingClient.email = email;
-      existingClient.phone = phone;
+      existingClient.name = cliente.name;
+      existingClient.email = cliente.email;
+      existingClient.phone = cliente.phone;
       const image = req.file;
 
       newClient.imagemPerfil = {

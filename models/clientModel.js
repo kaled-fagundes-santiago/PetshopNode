@@ -4,7 +4,7 @@ const clientSchema = new mongoose.Schema({
   codigo: {
     type: Number,
     unique: true,
-    required: true
+    required: false
   },
   nome: {
     type: String,
